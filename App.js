@@ -1,20 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Inicio from './screens/Inicio';
+import Votador from './screens/Votador';
+import Contador from './screens/Contador';
+import Login from './screens/Login';
+import ModalRegister from './src/components/ModalRegister';
+import ModalLogin from './src/components/ModalLogin';
+
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    return (
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Login">
+          <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
+          <Stack.Screen name="ModalLogin" component={ModalLogin} options={{headerShown: false}}/>
+          <Stack.Screen name="Inicio" component={Inicio} options={{headerShown: false}}/>
+          <Stack.Screen name="Votador" component={Votador} options={{headerShown: false}}/>
+          <Stack.Screen name="Contador" component={Contador} options={{headerShown: false}}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
+ 

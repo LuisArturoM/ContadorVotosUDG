@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.elchofry.contadorvotos"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f9be7dd8-6551-46b1-b93a-8bf5bed177e0"
+      }
+    },
+    "owner": "elchofry"
   }
 }
